@@ -10,7 +10,7 @@ def findARestaurant(mealType,location):
         "Authorization": f"{frsqr_key}"
     }
 	
-	url = f"https://api.foursquare.com/v3/places/search?query={mealType}&near={location}"
+	url = f"https://api.foursquare.com/v3/places/search?query={mealType}&near={location}&sort=DISTANCE"
 	response = requests.request("GET", url, headers=headers)
 	response = response.json()
 
