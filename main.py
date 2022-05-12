@@ -3,11 +3,9 @@ import requests
 
 def findARestaurant(mealType,location):
 
-	frsqr_key = "fsq3JWESDZttTqNG9BzfhQiUFOaQRee0g1SeJjTUychdAV4="
-
 	headers = {
         "Accept": "application/json",
-        "Authorization": f"{frsqr_key}"
+        "Authorization": "fsq3JWESDZttTqNG9BzfhQiUFOaQRee0g1SeJjTUychdAV4="
     }
 	
 	url = f"https://api.foursquare.com/v3/places/search?query={mealType}&near={location}&sort=DISTANCE"
