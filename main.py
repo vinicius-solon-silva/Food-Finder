@@ -1,5 +1,20 @@
 import requests
 
+# importar App, Builder (GUI)
+# criar nosso aplicativo
+# criar função build
+
+
+from kivy.app import App
+from kivy.lang import Builder 
+
+
+GUI = Builder.load_file("screen.kv")
+
+class myApp(App):
+	def build(self):
+		return GUI
+
 
 def findARestaurant(mealType,location):
 
