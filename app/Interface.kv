@@ -1,0 +1,48 @@
+<Interface@MDFloatLayout>:
+    MDLabel:
+        text: "Seja bem-vindo ao FoodFinder!"
+        halign: "center"
+        pos_hint:{"center_y":0.9}
+        
+    MDTextField:
+        id: mealType
+        pos_hint:{"center_x": 0.5, "center_y":0.8}
+        size_hint_x: 0.4
+        mode: "rectangle"
+        hint_text: "Insira o tipo de comida"
+
+    MDTextField:
+        id: location
+        pos_hint:{"center_x": 0.5, "center_y":0.7}
+        size_hint_x: 0.4
+        mode: "rectangle"
+        hint_text: "Insira o local"
+    
+    MDFillRoundFlatButton:
+        text: "Clique para Buscar"
+        size_hint_x: 0.4
+        size_hint_y: 0.1
+        pos_hint:{"center_x": 0.5, "center_y":0.55}
+        on_press: root.busca()
+        color: "Blue"
+        line_color: 0,0,1,1
+    
+    MDLabel:
+        id: name
+        text: "Nome: "
+        pos_hint:{"center_y":0.4}
+        halign: "center"
+
+    MDLabel:
+        id: adress
+        text: "Endereço: "
+        pos_hint:{"center_y":0.3}
+        halign: "center"
+    
+    MDLabel:
+        id: photo
+        text: "Foto: "
+        pos_hint:{"center_y":0.2}
+        halign: "center"
+
+Interface

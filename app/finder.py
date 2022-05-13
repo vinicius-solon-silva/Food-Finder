@@ -1,21 +1,5 @@
 import requests
 
-# importar App, Builder (GUI)
-# criar nosso aplicativo
-# criar função build
-
-
-from kivy.app import App
-from kivy.lang import Builder 
-
-
-GUI = Builder.load_file("screen.kv")
-
-class myApp(App):
-	def build(self):
-		return GUI
-
-
 def findARestaurant(mealType,location):
 
 	headers = {
@@ -32,7 +16,6 @@ def findARestaurant(mealType,location):
 		restaurant_name = response['results'][0]['name']
 		restaurant_address = response['results'][0]['location']['address']
 	except Exception as e:
-		print("\nRestaurant not found...\n")
 		return 0
 
 	photo_url = f"https://api.foursquare.com/v3/places/{restaurant_id}/photos?classifications=indoor%2Coutdoor"
@@ -53,15 +36,4 @@ def findARestaurant(mealType,location):
 		"photo": photo_link
 	}
 
-	print("\nRestaurant name: " + place_dict['name'] + 
-		  "\nAddress: " + place_dict['address'] +
-		  "\nPhoto: " + place_dict['photo'] + "\n")
-	
-
-if __name__ == '__main__':
-
-	print("\n---=== Foursquare and Google Maps Geocoding API Restaurant Search Engine ===---\n")
-	mealType = input("Enter the type of meal you wish to eat: ")
-	location = input("Enter the name/address of the location that you are interested in: ")
-	
-	findARestaurant(mealType, location)
+	return place_dict
