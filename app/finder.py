@@ -16,7 +16,7 @@ def findARestaurant(mealType,location):
 		restaurant_name = response['results'][0]['name']
 		restaurant_address = response['results'][0]['location']['address']
 	except Exception as e:
-		return 0
+		return None
 
 	photo_url = f"https://api.foursquare.com/v3/places/{restaurant_id}/photos?classifications=indoor%2Coutdoor"
 	photo_response = requests.request("GET", photo_url, headers=headers)
