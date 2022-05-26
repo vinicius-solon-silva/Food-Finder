@@ -1,6 +1,6 @@
 import requests
-import json
 import urllib.parse
+import json
 
 def find(meal_type,location):
 	
@@ -17,9 +17,10 @@ def find(meal_type,location):
 	response = requests.get(url, headers=headers)
 	res_dict = response.json()
 	
+
 	restaurants = []
 
-	for i in range(9):
+	for i in range(5):
 
 		restaurant_id = res_dict['results'][i]['fsq_id']
 		restaurant_id = urllib.parse.quote(restaurant_id)
@@ -42,5 +43,14 @@ def find(meal_type,location):
 		}
 
 		restaurants.append(place_dict)
+
+
+	print(json.dumps(restaurants))
 	
 	return restaurants
+
+
+if __name__ == '__main__':
+
+	
+	find("", "hortolandia")
