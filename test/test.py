@@ -1,23 +1,15 @@
 import requests
-import json
+import urllib.parse
 
 
 def find(meal_type,location):
 	
-	meal_type = meal_type.replace("ã", "a")
-	meal_type = meal_type.replace("á", "a")
-	meal_type = meal_type.replace("à", "a")
-	meal_type = meal_type.replace("ç", "c")
-	location = location.replace(" ", "%20")
-	location = location.replace(",", "%2C")
-	location = location.replace(";", "%2C")
-
+	meal_type = urllib.parse.quote(meal_type)
+	location = urllib.parse.quote(location)
+	
 	url = f"https://api.foursquare.com/v3/places/search?query={meal_type}&near={location}&sort=DISTANCE"
 
-	# url = "https://api.foursquare.com/v3/places/search?query=cacha%C3%A7a&near=terminal%20central%2C%20campinas%2C%20sp%2C%20brazil&sort=DISTANCE"
-
 	print("\n\n"+url+"\n\n")
-
 
 	headers = {
 		"Accept": "application/json",
