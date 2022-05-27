@@ -1,6 +1,5 @@
 import requests
 import urllib.parse
-import json
 
 def find(meal_type,location):
 	
@@ -20,7 +19,7 @@ def find(meal_type,location):
 
 	restaurants = []
 
-	for i in range(5):
+	for i in range(len(res_dict['results'])):
 
 		restaurant_id = res_dict['results'][i]['fsq_id']
 		restaurant_id = urllib.parse.quote(restaurant_id)

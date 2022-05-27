@@ -19,11 +19,11 @@ def find(meal_type,location):
 	response = requests.get(url, headers=headers)
 	res_dict = response.json()
 	
-	# print(len(res_dict))
+	# print(len(res_dict['results']))
 
 	restaurants = []
 
-	for i in range(9):
+	for i in range(len(res_dict['results'])):
 
 		restaurant_id = res_dict['results'][i]['fsq_id']
 		restaurant_id = urllib.parse.quote(restaurant_id)
@@ -58,5 +58,5 @@ def find(meal_type,location):
 if __name__ == '__main__':
 
 	
-	find("strogonoff", "brazil")
+	find("cerveja", "jardim nova america, campinas, sp, brasil")
 
