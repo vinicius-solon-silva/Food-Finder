@@ -45,12 +45,4 @@ def find(meal_type,location):
 		restaurants.append(place_dict)
 
 
-	print(json.dumps(restaurants))
-	
 	return restaurants
-
-
-if __name__ == '__main__':
-
-	
-	find("", "hortolandia")
