@@ -1,0 +1,62 @@
+MDScreen:
+    name: 'login'
+    MDFloatLayout:
+        md_bg_color: 255/255, 170/255, 5/255, 1
+        Image:
+            source: "FoodFinder.png"
+            size_hint: 0.7, 0.7
+            pos_hint:{"center_x": 0.5, "center_y":0.8}
+        MDLabel:
+            text: "LOGIN"
+            halign: "center"
+            pos_hint:{"center_x": 0.5, "center_y":0.6}
+            theme_text_color: 'Custom'
+            text_color: 1,1,1,1
+            font_size: "45sp"
+            font_name: "3.ttf"
+
+        MDTextField:
+            id: cpf
+            color_mode: 'custom'
+            pos_hint:{"center_x": 0.5, "center_y":0.5}
+            size_hint_x: 0.5
+            mode: "rectangle"
+            hint_text: "CPF"
+            text_color: 174/255, 115/255, 19/255, 1
+        
+        MDTextField:
+            id: senha
+            pos_hint:{"center_x": 0.5, "center_y":0.4}
+            size_hint_x: 0.5
+            mode: "rectangle"
+            hint_text: "Senha"
+            password: True
+            text_color: 174/255, 115/255, 19/255, 1
+
+        MDFillRoundFlatButton:
+            text: "Entrar"
+            halign: "center"
+            pos_hint:{"center_x": 0.5, "center_y":0.3}
+            size_hint_x: 0.5
+            md_bg_color: 213/255, 164/255, 23/255, 1
+            font_size: 16
+            on_release: app.logado()
+
+        MDFillRoundFlatButton:
+            text: "Cadastro"
+            halign: "center"
+            pos_hint:{"center_x": 0.5, "center_y":0.22}
+            size_hint_x: 0.5
+            md_bg_color: 213/255, 164/255, 23/255, 1
+            font_size: 16
+            
+        MDFlatButton:
+            text: "Entrar sem Logar"
+            theme_text_color: "Custom"
+            text_color: '#FFFFFF'
+            halign: "center"
+            pos_hint:{"center_x": 0.5, "center_y":0.08}
+            size_hint_x: 0.5
+            font_style: "H6"
+            
+           
