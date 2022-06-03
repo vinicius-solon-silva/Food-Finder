@@ -11,52 +11,31 @@ class ResultadosCard(MDCard):
        self.ids.address.text = address
        self.ids.photo.source = photo
 
-# Classes com as telas
-class Resultados(Screen):
-    ...
-   
-class Inicial(Screen):
-    ...
-
-class TelaLogin(Screen):
-    ...
-
-class TelaHome(Screen):
+class DemoProject(ScreenManager):
     def busca(self):
         comida = self.ids.mealType.text
         local = self.ids.location.text
-
         resposta = finder.find(comida, local)
-        print(resposta)
         return resposta 
 
     def abrir_card(self,name,address,photo):
-        self.ids.box.add_widget(ResultadosCard(name=name, address=address, photo=photo))
+        self.ids.results_box.add_widget(ResultadosCard(name=name, address=address, photo=photo))  
 
-class TelaConta(Screen): 
+    def navigation(self, tela):
+        MDApp.get_running_app().root.current = tela
+
+class TelaHome(Screen):
     ...
 
-class TelaFavoritos(Screen):
+class ListaResultados(Screen):
     ...
 
-# Screen manager
-sm = ScreenManager()
-sm.add_widget(TelaLogin(name='tela_login'))
-sm.add_widget(TelaLogin(name='tela_home'))
-sm.add_widget(TelaLogin(name='tela_conta'))
-sm.add_widget(TelaLogin(name='tela_favoritos'))
-sm.add_widget(Inicial(name='inicial'))
-sm.add_widget(Resultados(name='resultados'))
-sm.add_widget(TelaHome(name='home'))
-
-
-# Construção principal do app
 class Myapp(MDApp):
     def build(self):
         self.theme_cls.primary_palette = 'DeepOrange'
         self.theme_cls.accent_palette = 'Red'
-        return Builder.load_file('interface.kv')
+        Builder.load_file('interface.kv')
+        return DemoProject()
     
 # Inicia o aplicativo
 Myapp().run()
-
