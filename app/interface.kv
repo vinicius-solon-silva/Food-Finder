@@ -1,24 +1,46 @@
 <DemoProject>:
+
+# Splash #######################################################################################################################    
+    Screen:
+        name: "splash"
+        MDFloatLayout:
+            md_bg_color: 255/255, 170/255, 5/255, 1
+            Image:
+                source: "img/FoodFinder.png"
+                size_hint: 0.9, 0.9
+                pos_hint:{"center_x": 0.5, "center_y":0.5}
+
+# TelaLogin #######################################################################################################################    
+
     Screen:
         name: "tela_login"
         MDFloatLayout:
-            #md_bg_color: 255/255, 170/255, 5/255, 1
+            md_bg_color: 255/255, 170/255, 5/255, 1
+            Image:
+                source: "img/FoodFinder.png"
+                size_hint: 0.7, 0.7
+                pos_hint:{"center_x": 0.5, "center_y":0.8}
+        
             MDLabel:
-                text: "Tela de Login"
+                text: "LOGIN"
                 halign: "center"
-                pos_hint:{"center_x": 0.5, "center_y":0.9}
+                pos_hint:{"center_x": 0.5, "center_y":0.63}
+                theme_text_color: 'Custom'
+                text_color: 1,1,1,1
+                font_size: "30sp"
+                font_name: "3.ttf"
 
             MDTextField:
                 id: cpf
                 #theme_text_color: 'ContrastParentBackground'
-                pos_hint:{"center_x": 0.5, "center_y":0.7}
+                pos_hint:{"center_x": 0.5, "center_y":0.55}
                 size_hint_x: 0.4
                 mode: "rectangle"
                 hint_text: "CPF"
 
             MDTextField:
                 id: senha
-                pos_hint:{"center_x": 0.5, "center_y":0.6}
+                pos_hint:{"center_x": 0.5, "center_y":0.45}
                 size_hint_x: 0.4
                 mode: "rectangle"
                 hint_text: "Senha"
@@ -27,52 +49,53 @@
             MDFillRoundFlatButton:
                 text: "Entrar"
                 halign: "center"
-                pos_hint:{"center_x": 0.5, "center_y":0.5}
-                on_press:
+                pos_hint:{"center_x": 0.5, "center_y":0.35}
+                size_hint_x: 0.5
+                md_bg_color: 213/255, 164/255, 23/255, 1
+                font_size: 16
+                on_release:
                     # log = 1 ;
                     root.navigation('inicial')
-                size_hint_x: 0.4
+                
 
             MDFillRoundFlatButton:
                 text: "Cadastro"
                 halign: "center"
-                pos_hint:{"center_x": 0.5, "center_y":0.42}
-                size_hint_x: 0.4
-                
+                pos_hint:{"center_x": 0.5, "center_y":0.27}
+                size_hint_x: 0.5
+                md_bg_color: 213/255, 164/255, 23/255, 1
+                font_size: 16
+            
             MDFlatButton:
                 text: "Entrar sem Logar"
                 theme_text_color: "Custom"
-                text_color: '#FF9800'
+                text_color: '#FFFFFF'
                 halign: "center"
                 pos_hint:{"center_x": 0.5, "center_y":0.08}
-                size_hint_x: 0.4
-                font_style: "H6"
+                size_hint_x: 0.5
+                font_size: "16sp"
+                font_name: "3.ttf"
+                #on_release:
+                    #root.manager.current = "tela_deslogado"
     
-
+# Resultados #######################################################################################################################    
 
     Screen:
         name: 'resultados'
         MDBoxLayout:
+            id: 'screen_results_box'
             orientation: 'vertical'
-            MDBoxLayout:
-                orientation: 'vertical'
-                MDIconButton:
-                    icon: "arrow-left"
-                    pos_hint:{"left_x": 0.5, "center_y":0.9}
-                    on_press:
-                        root.navigation('inicial')
-                MDLabel:
-                    id: resultados
-                    text: "resultados"
-                    pos_hint:{"center_y":0.8}
-                    halign: "center"
+            MDToolbar:
+                title: "Resultados"
+                left_action_items: [['chevron-left', lambda x: root.navigation('inicial')]]
             ScrollView: 
                 MDList:
                     id: results_box
                     size_hint_y:None
             
+            
     
-
+# Inicial #######################################################################################################################    
 
     Screen:
         name: 'inicial'
@@ -90,6 +113,7 @@
                 elected_color_background: 0, 0, 1, .4
                 
 
+# Home #######################################################################################################################    
 
                 MDBottomNavigationItem:
                     id: 'BHome'
@@ -125,6 +149,7 @@
                                 size_hint_y: 0.4
                                 pos_hint:{"center_x": 0.5}
                                 on_release: 
+                                    root.remove_cards()
                                     var=root.busca()
                                     for v in var: \
                                     root.abrir_card(v['name'],v['address'], v['photo'])
@@ -135,8 +160,7 @@
                                 size_hint_y:None
                                     
                         
-
-
+# TelaConta #######################################################################################################################    
 
                 MDBottomNavigationItem:
                     name: "tela_conta"
@@ -200,7 +224,7 @@
                             pos_hint: {'center_x': .5, 'center_y': .27}
                             # on_release: app.show_alert_dialog()
 
-
+# Favoritos #######################################################################################################################    
 
                 MDBottomNavigationItem:
                     text: "Favoritos"
@@ -227,7 +251,7 @@
                                     fourth_text: "quarta linha"
                                     # on_release: app.presser(self, "item2")   
                     
-    
+# Card de Resultados #######################################################################################################################       
 
 <ResultadosCard>
     name: 'resultados_card'
@@ -259,3 +283,4 @@
                 text: ""
                 adaptive_height: True
                 theme_text_color: "Primary"
+    
