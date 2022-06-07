@@ -92,6 +92,9 @@
                 MDList:
                     id: results_box
                     size_hint_y:None
+                    spacing: "110dp"
+
+                    
             
             
     
@@ -262,6 +265,10 @@
             id: photo
             source: "https://img.itdg.com.br/tdg/images/blog/uploads/2017/07/shutterstock_413580649.jpg?w=1200"
             size_hint: .3, None
+        
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint: .05, None
 
         MDBoxLayout:
             id: text_box
@@ -283,4 +290,4 @@
                 text: ""
                 adaptive_height: True
                 theme_text_color: "Primary"
-    
+    MDSeparator:

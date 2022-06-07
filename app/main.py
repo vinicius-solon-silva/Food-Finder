@@ -2,7 +2,6 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.uix.card import MDCard
-from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.clock import Clock
 import finder 
 
@@ -27,8 +26,8 @@ class DemoProject(ScreenManager):
         return resposta 
 
     def abrir_card(self,name,address,photo):
-        self.ids.results_box.add_widget(ResultadosCard(name=name, address=address, photo=photo))  
-    
+        self.ids.results_box.add_widget(ResultadosCard(name=name, address=address, photo=photo))
+
     def remove_cards(self):
         while True:
             try:
