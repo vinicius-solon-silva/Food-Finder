@@ -131,7 +131,7 @@
                 orientation: 'vertical'
                 md_bg_color: 227/255, 100/255, 20/255, 1
                 MDIconButton:
-                    icon: 'arrow-left'
+                    icon: 'menu-left'
                     pos_hint: {"center_x": .1, "center_y": .9}
                     theme_text_color: "Custom"
                     text_color: 1,1,1,1
@@ -264,6 +264,8 @@
                     md_bg_color: 251/255, 139/255, 36/255, 1
                     font_size: 16
                     font_name: "WorkSans-Bold.ttf"
+                    on_release:
+                        root.cadastrar()
 
                         
             

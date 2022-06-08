@@ -4,7 +4,10 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.uix.card import MDCard
 from kivy.clock import Clock
 from kivy.core.window import Window
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDFlatButton
 import finder 
+import db_conn
 
 Window.size = (470,750)
 
@@ -44,6 +47,24 @@ class DemoProject(ScreenManager):
 
     def navigation(self, tela):
         MDApp.get_running_app().root.current = tela
+
+    def cadastrar(self):
+        nome = self.ids.cdt_nome.text
+        cpf = self.ids.cdt_cpf.text
+        data_nasc = self.ids.cdt_data_nascimento.text
+        email = self.ids.cdt_email.text
+        senha = self.ids.cdt_senha.text
+
+        try:
+            retorno = db_conn.cadastrar(nome, cpf, data_nasc, email, senha)
+            if retorno == "Cadastro concluido com sucesso!":
+                self.dialog = MDDialog(title = 'Cadastro Concluído!', buttons=[MDFlatButton(text='Concluir')])
+                self.dialog.open()
+        except:
+            self.dialog = MDDialog(title = 'Erro',text = 'Tente novamente' )
+            self.dialog.open()
+
+        
 
 class TelaHome(Screen):
     ...
