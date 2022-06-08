@@ -4,7 +4,7 @@
     Screen:
         name: "splash"
         MDFloatLayout:
-            md_bg_color: 209/255, 138/255, 21/255, 1
+            md_bg_color: 227/255, 100/255, 20/255, 1
             Image:
                 source: "img/FoodFinder.png"
                 size_hint: 0.9, 0.9
@@ -15,16 +15,16 @@
     Screen:
         name: "tela_login"
         MDFloatLayout:
-            md_bg_color: 209/255, 138/255, 21/255, 1
+            md_bg_color: 227/255, 100/255, 20/255, 1
             Image:
                 source: "img/FoodFinder.png"
-                size_hint: 0.9, 0.9
+                size_hint: 0.7, 0.7
                 pos_hint:{"center_x": 0.5, "center_y":0.7}
         
             MDLabel:
                 text: "CPF"
                 halign: "center"
-                pos_hint:{"center_x": 0.32,  "center_y":0.48}
+                pos_hint:{"center_x": 0.17,  "center_y":0.48}
                 theme_text_color: 'Custom'
                 text_color: 1,1,1,1
                 font_size: "20sp"
@@ -39,14 +39,15 @@
                 theme_text_color: 'Custom'
                 text_color: 1, 1, 1, 1
                 pos_hint:{"center_x": 0.5, "center_y":0.43}
-                size_hint_x: 0.4
+                size_hint_x: 0.7
+                size_hint_y: 0.04
                 #size_hint_y: 0.06
                 #hint_text: "CPF"
                 
             MDLabel:
                 text: "Senha"
                 halign: "center"
-                pos_hint:{"center_x": 0.34,  "center_y":0.38}
+                pos_hint:{"center_x": 0.2,  "center_y":0.38}
                 theme_text_color: 'Custom'
                 text_color: 1,1,1,1
                 font_size: "20sp"
@@ -58,7 +59,8 @@
                 normal_color: 1,1,1,1
                 color_active: 247/255, 243/255, 235/255, 1
                 pos_hint:{"center_x": 0.5, "center_y":0.33}
-                size_hint_x: 0.4
+                size_hint_x: 0.7
+                size_hint_y: 0.04
                 #size_hint_y: 0.06
                 #hint_text: "Senha"
                 password: True
@@ -67,10 +69,11 @@
                 text: "Entrar"
                 halign: "center"
                 pos_hint:{"center_x": 0.5, "center_y":0.25}
-                size_hint_x: 0.45
-                size_hint_y: 0.06
-                md_bg_color: 246/255, 172/255, 49/255, 1
+                size_hint_x: 0.75
+                size_hint_y: 0.07
+                md_bg_color: 251/255, 139/255, 36/255, 1
                 font_size: 16
+                font_name: "WorkSans-Bold.ttf"
                 on_release:
                     # log = 1 ;
                     root.navigation('inicial')
@@ -78,10 +81,10 @@
             MDLabel:
                 text: "Não possui conta? "
                 halign: "center"
-                pos_hint:{"center_x": 0.39,  "center_y":0.18}
+                pos_hint:{"center_x": 0.34,  "center_y":0.18}
                 theme_text_color: 'Custom'
                 text_color: 1,1,1,1
-                font_size: "12sp"
+                font_size: "17sp"
                 font_name: "WorkSans-Light.ttf"
 
             MDFlatButton:
@@ -89,12 +92,15 @@
                 theme_text_color: "Custom"
                 text_color: '#FFFFFF'
                 halign: "center"
-                pos_hint:{"center_x": 0.625, "center_y":0.18}
+                pos_hint:{"center_x": 0.66, "center_y":0.18}
                 size_hint_x: 0.24
                 size_hint_y: 0.05
-                md_bg_color: 213/255, 164/255, 23/255, 1
-                font_size: 12
+                md_bg_color: 251/255, 139/255, 36/255, 1
+                font_size: 17
                 font_name: "WorkSans-Bold.ttf"
+                on_release:
+                    root.navigation('tela_cadastro')
+
             
             #MDFlatButton:
              #   text: ""
@@ -112,11 +118,163 @@
                 title: "Se preferir, siga sem Logar"
                 font_size: 14
                 halign: 'center'
-                md_bg_color: 246/255, 172/255, 49/255, 1
+                md_bg_color: 251/255, 139/255, 36/255, 1
                 right_action_items: [['arrow-right-bold', lambda x: root.manager.current('tela_deslogado')]]
-                
                 font_name: "WorkSans-Bold.ttf"
-    
+
+# TelaCadastro #######################################################################################################################    
+
+    Screen:
+        name: 'tela_cadastro'
+        ScrollView:
+            MDFloatLayout:
+                orientation: 'vertical'
+                md_bg_color: 227/255, 100/255, 20/255, 1
+                MDIconButton:
+                    icon: 'arrow-left'
+                    pos_hint: {"center_x": .1, "center_y": .9}
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1
+                    on_release:
+                        root.navigation('tela_login')
+                    
+                Image:
+                    source: "img/FoodFinder.png"
+                    size_hint: 0.7, 0.7
+                    pos_hint:{"center_x": 0.5,"center_y": 0.83 }
+                MDLabel:
+                    text: 'Novo Cadastro'
+                    font_style: "H4"
+                    halign: "center"
+                    pos_hint:{"center_y": 0.7}
+                    theme_text_color: "Custom"
+                    text_color: '#FFFFFF'
+                    font_name: "WorkSans-Bold.ttf"
+                MDLabel:
+                    text: 'Insira suas informações abaixo:'
+                    font_style: "H6"
+                    halign: "center"
+                    pos_hint:{"center_y": 0.65}
+                    theme_text_color: "Custom"
+                    text_color: '#FFFFFF'
+                    font_name: "WorkSans-Light.ttf"
+                
+                MDLabel:
+                    text: "CPF"
+                    halign: "center"
+                    pos_hint:{"center_x": 0.17,  "center_y":0.6}
+                    theme_text_color: 'Custom'
+                    text_color: 1,1,1,1
+                    font_size: "20sp"
+                    font_name: "WorkSans-Bold.ttf"
+
+                MDTextFieldRound:
+                    id: cdt_cpf
+                    normal_color: 1,1,1,1
+                    color_active: 247/255, 243/255, 235/255, 1
+                    theme_text_color: 'Custom'
+                    text_color: 1, 1, 1, 1
+                    pos_hint:{"center_x": 0.5, "center_y":0.55}
+                    size_hint_x: 0.7
+                    size_hint_y: 0.04
+                
+                MDLabel:
+                    text: "Nome Completo"
+                    halign: "center"
+                    pos_hint:{"center_x": 0.3,  "center_y":0.5}
+                    theme_text_color: 'Custom'
+                    text_color: 1,1,1,1
+                    font_size: "20sp"
+                    font_name: "WorkSans-Bold.ttf"
+
+                MDTextFieldRound:
+                    id: cdt_nome
+                    normal_color: 1,1,1,1
+                    color_active: 247/255, 243/255, 235/255, 1
+                    theme_text_color: 'Custom'
+                    text_color: 1, 1, 1, 1
+                    pos_hint:{"center_x": 0.5, "center_y":0.45}
+                    size_hint_x: 0.7
+                    size_hint_y: 0.04
+                
+                MDLabel:
+                    text: "Email"
+                    halign: "center"
+                    pos_hint:{"center_x": 0.2,  "center_y":0.4}
+                    theme_text_color: 'Custom'
+                    text_color: 1,1,1,1
+                    font_size: "20sp"
+                    font_name: "WorkSans-Bold.ttf"
+
+                MDTextFieldRound:
+                    id: cdt_email
+                    normal_color: 1,1,1,1
+                    color_active: 247/255, 243/255, 235/255, 1
+                    theme_text_color: 'Custom'
+                    text_color: 1, 1, 1, 1
+                    pos_hint:{"center_x": 0.5, "center_y":0.35}
+                    size_hint_x: 0.7
+                    size_hint_y: 0.04
+
+                MDLabel:
+                    text: "Data de Nascimento"
+                    halign: "center"
+                    pos_hint:{"center_x": 0.35,  "center_y":0.3}
+                    theme_text_color: 'Custom'
+                    text_color: 1,1,1,1
+                    font_size: "20sp"
+                    font_name: "WorkSans-Bold.ttf"
+
+                MDTextFieldRound:
+                    id: cdt_data_nascimento
+                    normal_color: 1,1,1,1
+                    color_active: 247/255, 243/255, 235/255, 1
+                    theme_text_color: 'Custom'
+                    text_color: 1, 1, 1, 1
+                    pos_hint:{"center_x": 0.5, "center_y":0.25}
+                    size_hint_x: 0.7
+                    size_hint_y: 0.04  
+
+                MDLabel:
+                    text: "Senha"
+                    halign: "center"
+                    pos_hint:{"center_x": 0.2,  "center_y":0.2}
+                    theme_text_color: 'Custom'
+                    text_color: 1,1,1,1
+                    font_size: "20sp"
+                    font_name: "WorkSans-Bold.ttf"
+
+                MDTextFieldRound:
+                    id: cdt_senha
+                    normal_color: 1,1,1,1
+                    color_active: 247/255, 243/255, 235/255, 1
+                    theme_text_color: 'Custom'
+                    text_color: 1, 1, 1, 1
+                    pos_hint:{"center_x": 0.5, "center_y":0.15}
+                    size_hint_x: 0.7
+                    size_hint_y: 0.04  
+                    password: True      
+                
+                MDFillRoundFlatButton:
+                    text: "Cadastrar"
+                    halign: "center"
+                    pos_hint:{"center_x": 0.5, "center_y":0.05}
+                    size_hint_x: 0.75
+                    size_hint_y: 0.07
+                    md_bg_color: 251/255, 139/255, 36/255, 1
+                    font_size: 16
+                    font_name: "WorkSans-Bold.ttf"
+
+                        
+            
+            
+                
+
+
+
+
+
+
 # Resultados #######################################################################################################################    
 
     Screen:
@@ -278,7 +436,7 @@
                 theme_text_color: "Primary"
     MDSeparator:
 
-# Card de Aleração de Senha #######################################################################################################################       
+# Card de Alteração de Senha #######################################################################################################################       
 <SenhaCard>:
     orientation: 'vertical'
     id: card

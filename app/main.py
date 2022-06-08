@@ -6,7 +6,7 @@ from kivy.clock import Clock
 from kivy.core.window import Window
 import finder 
 
-Window.size = (450,750)
+Window.size = (470,750)
 
 class ResultadosCard(MDCard):
    def __init__(self,name='',address='',photo='',**kwargs):
@@ -44,8 +44,6 @@ class DemoProject(ScreenManager):
 
     def navigation(self, tela):
         MDApp.get_running_app().root.current = tela
-
-    
 
 class TelaHome(Screen):
     ...
