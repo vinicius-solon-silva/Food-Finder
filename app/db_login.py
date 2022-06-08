@@ -1,5 +1,5 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine, Column, BigInteger, String
+from sqlalchemy import create_engine, Column, BigInteger, String, true
 from sqlalchemy.orm import sessionmaker
 
 
@@ -26,8 +26,12 @@ def login(cpf, senha):
         if login and passwd == senha:
             session.commit()
             session.close()   
-            return "Login concluido com sucesso!"
+            return true
         else:
+            session.commit()
+            session.close() 
             return "Nao foi possivel fazer login, tente novamente."
     except Exception as e:
+        session.commit()
+        session.close() 
         return "Cadastro inexistente no banco, consulte o desenvolvedor!\nCodigo do erro: " + e
