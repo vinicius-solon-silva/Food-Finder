@@ -4,6 +4,9 @@ from sqlalchemy.orm import sessionmaker
 
 
 def cadastrar(nome, cpf, data_nasc, email, senha):
+
+    cpf = int(cpf)
+
     engine = create_engine(f'mssql+pymssql://adminvinicius:vinnyadmin123!@viniciussilva-sv.database.windows.net:1433/viniciussilva-db', echo=False)
     Sessions = sessionmaker(bind=engine)
     session = Sessions()
@@ -26,3 +29,7 @@ def cadastrar(nome, cpf, data_nasc, email, senha):
     success = "Cadastro concluido com sucesso!"
 
     return success
+
+if __name__ == '__main__':
+    s = cadastrar("Bruno Valaz", "9877899877", "2000/08/5", "aaaaa@email.com.br", "123321xxx")
+    print(s)
