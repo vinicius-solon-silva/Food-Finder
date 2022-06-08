@@ -23,6 +23,6 @@ def cadastrar(nome, cpf, data_nasc, email, senha):
     session.add(ffUser)
     session.commit()
     session.close()
-    success = "Cadastro concluído com sucesso!"
+    success = "Cadastro concluido com sucesso!"
 
     return success
