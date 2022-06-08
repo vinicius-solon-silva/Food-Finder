@@ -30,4 +30,4 @@ def login(cpf, senha):
         else:
             return "Nao foi possivel fazer login, tente novamente."
     except Exception as e:
-        return "Cadastro inexistente no banco, consulte o desenvolvedor!\nCódigo do erro: " + e
+        return "Cadastro inexistente no banco, consulte o desenvolvedor!\nCodigo do erro: " + e
