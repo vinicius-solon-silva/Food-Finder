@@ -29,7 +29,3 @@ def cadastrar(nome, cpf, data_nasc, email, senha):
     success = "Cadastro concluido com sucesso!"
 
     return success
-
-if __name__ == '__main__':
-    s = cadastrar("Bruno Valaz", "9877899877", "2000/08/5", "aaaaa@email.com.br", "123321xxx")
-    print(s)
