@@ -461,7 +461,7 @@
                             font_name: "WorkSans-Bold.ttf"
 
                         MDTextFieldRound:
-                            id: mealType
+                            # id: mealType
                             normal_color: 1,1,1,1
                             color_active: 247/255, 243/255, 235/255, 1
                             theme_text_color: 'Custom'
@@ -480,7 +480,7 @@
                             font_name: "WorkSans-Bold.ttf"
 
                         MDTextFieldRound:
-                            id: location
+                            # id: location
                             normal_color: 1,1,1,1
                             color_active: 247/255, 243/255, 235/255, 1
                             theme_text_color: 'Custom'
@@ -490,7 +490,7 @@
                             size_hint_y: 0.06   
                                     
                         MDFillRoundFlatButton:
-                            id: bt_buscar
+                            # id: bt_buscar
                             text: "Buscar"
                             size_hint_x: 0.8
                             size_hint_y: 0.1
@@ -498,12 +498,12 @@
                             font_size: 18
                             font_name: "WorkSans-Bold.ttf"
                             pos_hint:{"center_x": 0.5, "center_y": 0.55}
-                            on_release: 
-                                root.remove_cards()
-                                var=root.busca()
-                                for v in var: \
-                                root.abrir_card(v['name'],v['address'], v['photo'])
-                                root.navigation('resultados')
+                            # on_release: 
+                            #     root.remove_cards()
+                            #     var=root.busca()
+                            #     for v in var: \
+                            #     root.abrir_card(v['name'],v['address'], v['photo'])
+                            #     root.navigation('resultados')
                         
 
                          
