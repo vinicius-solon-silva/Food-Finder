@@ -5,7 +5,7 @@ from kivymd.uix.card import MDCard
 from kivy.clock import Clock
 from kivy.core.window import Window
 from kivymd.uix.dialog import MDDialog
-from kivymd.uix.button import MDFlatButton
+from kivymd.uix.button import MDFlatButton,MDRectangleFlatButton
 import finder 
 import db_conn
 
@@ -19,6 +19,10 @@ class ResultadosCard(MDCard):
        self.ids.photo.source = photo
        
 class SenhaCard(MDCard):
+    def fechar(self):
+        self.parent.remove_widget(self)
+
+class ExcluirCard(MDCard):
     def fechar(self):
         self.parent.remove_widget(self)
 
@@ -64,6 +68,7 @@ class DemoProject(ScreenManager):
             self.dialog = MDDialog(title = 'Erro',text = 'Tente novamente' )
             self.dialog.open()
 
+  
         
 
 class TelaHome(Screen):
@@ -72,6 +77,9 @@ class TelaHome(Screen):
 class TelaConta(Screen):
     def alter_senha(self): #método para abrir o card
         self.add_widget(SenhaCard())
+
+    def excluir_conta(self): #método para abrir o card
+        self.add_widget(ExcluirCard())
     ...
 
 class ListaResultados(Screen):

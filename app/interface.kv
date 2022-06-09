@@ -101,25 +101,12 @@
                 on_release:
                     root.navigation('tela_cadastro')
 
-            
-            #MDFlatButton:
-             #   text: ""
-              #  theme_text_color: "Custom"
-             #   text_color: '#FFFFFF'
-             #   halign: "center"
-             #   pos_hint:{"center_x": 0.55, "center_y":0.08}
-             #   size_hint_x: 1
-             #   font_size: 16
-            #    font_name: "3.ttf"
-                #on_release:
-                    #root.manager.current = "tela_deslogado"
-
             MDToolbar:
                 title: "Se preferir, siga sem Logar"
                 font_size: 14
                 halign: 'center'
                 md_bg_color: 251/255, 139/255, 36/255, 1
-                right_action_items: [['arrow-right-bold', lambda x: root.manager.current('tela_deslogado')]]
+                right_action_items: [['arrow-right-bold', lambda x: root.navigation('inicial_deslogado')]]
                 font_name: "WorkSans-Bold.ttf"
 
 # TelaCadastro #######################################################################################################################    
@@ -309,7 +296,7 @@
                 id: barra_principal
                 title: "FoodFinder"
                 halign: "center"
-                right_action_items: [["account-arrow-left", lambda x: root.voltar_login()]]
+                right_action_items: [["account-arrow-left", lambda x: root.navigation('tela_login')]]
 
             MDBottomNavigation:
                 #color stuff
@@ -324,44 +311,73 @@
                     text: "Home"
                     icon: 'home'
                     name: 'home'
-                    MDBoxLayout:
-                        orientation:'vertical'
-                        MDBoxLayout:
-                            orientation:'vertical'
-                            MDLabel:
-                                text: "Seja bem-vindo ao FoodFinder!"
-                                halign: "center"
-                                        
-                            MDTextField:
-                                id: mealType
-                                pos_hint:{"center_x": 0.5}
-                                size_hint_x: 0.4
-                                mode: "rectangle"
-                                hint_text: "Insira o tipo de comida"
+                    MDFloatLayout:
+                        md_bg_color: 227/255, 100/255, 20/255, 1
+                        MDLabel:
+                            text: "Seja bem-vindo ao FoodFinder!"
+                            halign: "center"
+                            pos_hint:{"center_y":0.9}
+                            theme_text_color: 'Custom'
+                            text_color: 1,1,1,1
+                            font_size: "20sp"
+                            font_name: "WorkSans-Bold.ttf"
+                            
+                        MDLabel:
+                            text: "O que deseja comer?"
+                            halign: "center"
+                            pos_hint:{"center_x": 0.25,  "center_y":0.8}
+                            theme_text_color: 'Custom'
+                            text_color: 1,1,1,1
+                            font_size: "16sp"
+                            font_name: "WorkSans-Bold.ttf"
 
-                            MDTextField:
-                                id: location
-                                pos_hint:{"center_x": 0.5}
-                                size_hint_x: 0.4
-                                mode: "rectangle"
-                                hint_text: "Insira o local"
+                        MDTextFieldRound:
+                            id: mealType
+                            normal_color: 1,1,1,1
+                            color_active: 247/255, 243/255, 235/255, 1
+                            theme_text_color: 'Custom'
+                            text_color: 1, 1, 1, 1
+                            pos_hint:{"center_x": 0.5, "center_y":0.75}
+                            size_hint_x: 0.8
+                            size_hint_y: 0.06      
+
+                        MDLabel:
+                            text: "Em que local?"
+                            halign: "center"
+                            pos_hint:{"center_x": 0.20,  "center_y":0.70}
+                            theme_text_color: 'Custom'
+                            text_color: 1,1,1,1
+                            font_size: "16sp"
+                            font_name: "WorkSans-Bold.ttf"
+
+                        MDTextFieldRound:
+                            id: location
+                            normal_color: 1,1,1,1
+                            color_active: 247/255, 243/255, 235/255, 1
+                            theme_text_color: 'Custom'
+                            text_color: 1, 1, 1, 1
+                            pos_hint:{"center_x": 0.5, "center_y":0.65}
+                            size_hint_x: 0.8
+                            size_hint_y: 0.06   
                                     
-                            MDFillRoundFlatButton:
-                                id: bt_buscar
-                                text: "Buscar"
-                                size_hint_x: 0.4
-                                size_hint_y: 0.4
-                                pos_hint:{"center_x": 0.5}
-                                on_release: 
-                                    root.remove_cards()
-                                    var=root.busca()
-                                    for v in var: \
-                                    root.abrir_card(v['name'],v['address'], v['photo'])
-                                    root.navigation('resultados')
-                        ScrollView: 
-                            MDList:
-                                id: box
-                                size_hint_y:None
+                        MDFillRoundFlatButton:
+                            id: bt_buscar
+                            text: "Buscar"
+                            size_hint_x: 0.8
+                            size_hint_y: 0.1
+                            md_bg_color: 251/255, 139/255, 36/255, 1
+                            font_size: 18
+                            font_name: "WorkSans-Bold.ttf"
+                            pos_hint:{"center_x": 0.5, "center_y": 0.55}
+                            on_release: 
+                                root.remove_cards()
+                                var=root.busca()
+                                for v in var: \
+                                root.abrir_card(v['name'],v['address'], v['photo'])
+                                root.navigation('resultados')
+                        
+
+                        
                                     
                         
 # TelaConta #######################################################################################################################    
@@ -398,7 +414,99 @@
                                     secondary_text: "Second Line"
                                     tertiary_text: "Third Line"
                                     fourth_text: "quarta linha"
-                                    # on_release: app.presser(self, "item2")   
+                                    # on_release: app.presser(self, "item2")  
+# Inicial #######################################################################################################################    
+
+    Screen:
+        name: 'inicial_deslogado'
+        BoxLayout:
+            orientation: 'vertical'
+            MDToolbar:
+                id: barra_principal
+                title: "FoodFinder"
+                halign: "center"
+                right_action_items: [["account-arrow-left", lambda x: root.navigation('tela_login')]]
+
+            MDBottomNavigation:
+                #color stuff
+                #panel_color: 0,0,1,1
+                elected_color_background: 0, 0, 1, .4
+                
+
+# Home #######################################################################################################################    
+
+                MDBottomNavigationItem:
+                    id: 'BHome'
+                    text: "Home"
+                    icon: 'home'
+                    name: 'home'
+                    MDFloatLayout:
+                        md_bg_color: 227/255, 100/255, 20/255, 1
+                        MDLabel:
+                            text: "Seja bem-vindo ao FoodFinder!"
+                            halign: "center"
+                            pos_hint:{"center_y":0.9}
+                            theme_text_color: 'Custom'
+                            text_color: 1,1,1,1
+                            font_size: "20sp"
+                            font_name: "WorkSans-Bold.ttf"
+                            
+                        MDLabel:
+                            text: "O que deseja comer?"
+                            halign: "center"
+                            pos_hint:{"center_x": 0.25,  "center_y":0.8}
+                            theme_text_color: 'Custom'
+                            text_color: 1,1,1,1
+                            font_size: "16sp"
+                            font_name: "WorkSans-Bold.ttf"
+
+                        MDTextFieldRound:
+                            id: mealType
+                            normal_color: 1,1,1,1
+                            color_active: 247/255, 243/255, 235/255, 1
+                            theme_text_color: 'Custom'
+                            text_color: 1, 1, 1, 1
+                            pos_hint:{"center_x": 0.5, "center_y":0.75}
+                            size_hint_x: 0.8
+                            size_hint_y: 0.06      
+
+                        MDLabel:
+                            text: "Em que local?"
+                            halign: "center"
+                            pos_hint:{"center_x": 0.20,  "center_y":0.70}
+                            theme_text_color: 'Custom'
+                            text_color: 1,1,1,1
+                            font_size: "16sp"
+                            font_name: "WorkSans-Bold.ttf"
+
+                        MDTextFieldRound:
+                            id: location
+                            normal_color: 1,1,1,1
+                            color_active: 247/255, 243/255, 235/255, 1
+                            theme_text_color: 'Custom'
+                            text_color: 1, 1, 1, 1
+                            pos_hint:{"center_x": 0.5, "center_y":0.65}
+                            size_hint_x: 0.8
+                            size_hint_y: 0.06   
+                                    
+                        MDFillRoundFlatButton:
+                            id: bt_buscar
+                            text: "Buscar"
+                            size_hint_x: 0.8
+                            size_hint_y: 0.1
+                            md_bg_color: 251/255, 139/255, 36/255, 1
+                            font_size: 18
+                            font_name: "WorkSans-Bold.ttf"
+                            pos_hint:{"center_x": 0.5, "center_y": 0.55}
+                            on_release: 
+                                root.remove_cards()
+                                var=root.busca()
+                                for v in var: \
+                                root.abrir_card(v['name'],v['address'], v['photo'])
+                                root.navigation('resultados')
+                        
+
+                         
                     
 # Card de Resultados #######################################################################################################################       
 
@@ -455,6 +563,8 @@
             #pos_hint:{'center_y': .5}
             theme_text_color: 'Custom'
             text_color: 1, 1, 1, 1
+            font_size: "18sp"
+            font_name: "WorkSans-Bold.ttf"
         
         MDIconButton:
             icon: 'close'
@@ -484,6 +594,58 @@
             size_hint_x: .5
             text: 'Confirmar'
 
+# Card de Excluir conta #######################################################################################################################       
+<ExcluirCard>:
+    orientation: 'vertical'
+    id: card
+    size_hint: .7, .35
+    pos_hint: {'center_x': .5, 'center_y': .6}
+
+    MDBoxLayout:
+        size_hint_y: .2
+        padding: [40, 10, 10, 10]
+        md_bg_color: app.theme_cls.primary_color
+        
+        MDLabel:
+            text: 'Excluir conta'
+            #pos_hint:{'center_y': .5}
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            font_size: "18sp"
+            font_name: "WorkSans-Bold.ttf"
+        
+        MDIconButton:
+            icon: 'close'
+            pos_hint:{'center_y': .5}
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            on_release: root.fechar()
+    
+    MDFloatLayout:
+        MDLabel:
+            text: 'Digite sua senha para confirmar:'
+            pos_hint:{'center_x': .59,'center_y': .80}
+            font_size: "18sp"
+            font_name: "WorkSans-Light.ttf"
+            
+
+        MDTextField: 
+            pos_hint: {'center_x': .5, 'center_y': .53} 
+            size_hint_x: .8
+            hint_text: 'Senha'
+        
+        MDRaisedButton:
+            pos_hint: {'center_x': .3, 'center_y': .2} 
+            size_hint_x: .35
+            text: 'Confirmar'
+
+        MDRaisedButton:
+            pos_hint: {'center_x': .7, 'center_y': .2} 
+            size_hint_x: .35
+            text: 'Cancelar'
+            on_release: root.fechar()
+
+
 # Tela de Conta #######################################################################################################################      
 <TelaConta>: #da pra definir a posição exata dos widgets
     MDIconButton:
@@ -497,7 +659,9 @@
     
     # Email
     MDLabel:
-        text: 'Email:' 
+        text: 'Email:'
+        font_size: 18
+        font_name: "WorkSans-Bold.ttf" 
         halign: "center"
         pos_hint: {'center_x': .1, 'center_y': .6}
     MDTextField:
@@ -511,7 +675,9 @@
     
     #CPF
     MDLabel:
-        text: 'CPF:' 
+        text: 'CPF:'
+        font_size: 18
+        font_name: "WorkSans-Bold.ttf" 
         halign: "center"
         pos_hint: {'center_x': .1, 'center_y': .53}
     MDTextField:
@@ -519,11 +685,16 @@
         hint_text: '12345678911'
         disabled:True
         pos_hint: {'center_x': .52, 'center_y': .53}
+    MDIconButton:
+        pos_hint: {'center_x': .9, 'center_y': .53}
+        icon: 'pencil'
     
 
     #Data Nascimento
     MDLabel:
-        text: 'Data de Nascimento:' 
+        text: 'Data de Nascimento:'
+        font_size: 18
+        font_name: "WorkSans-Bold.ttf"
         halign: "center"
         pos_hint: {'center_x': .235, 'center_y': .46}
     MDTextField:
@@ -531,16 +702,29 @@
         hint_text: '19/05/2022'
         disabled:True
         pos_hint: {'center_x': .651, 'center_y': .46}
+    MDIconButton:
+        pos_hint: {'center_x': .9, 'center_y': .46}
+        icon: 'pencil'
 
-    MDRaisedButton:
-        size_hint_x: .4
+    MDFillRoundFlatButton:
+        id: bt_buscar
         text: "Alterar Senha"
-        pos_hint: {'center_x': .5, 'center_y': .35} #define a posição
+        size_hint_x: 0.9
+        size_hint_y: 0.08
+        md_bg_color: 251/255, 139/255, 36/255, 1
+        font_size: 20
+        font_name: "WorkSans-Bold.ttf"
+        pos_hint:{"center_x": 0.5, "center_y": 0.35}
         on_release: root.alter_senha()
     
-    MDRectangleFlatButton:
-        size_hint_x: .4
+    MDFillRoundFlatButton:
+        id: bt_buscar
         text: "Excluir Conta"
-        pos_hint: {'center_x': .5, 'center_y': .27}
-        on_release: app.show_alert_dialog()
+        size_hint_x: 0.9
+        size_hint_y: 0.08
+        md_bg_color: 251/255, 139/255, 36/255, 1
+        font_size: 20
+        font_name: "WorkSans-Bold.ttf"
+        pos_hint:{"center_x": 0.5, "center_y": 0.25}
+        on_release: root.excluir_conta()
         
