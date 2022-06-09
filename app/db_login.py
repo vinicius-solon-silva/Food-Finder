@@ -1,5 +1,5 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine, Column, BigInteger, String, true
+from sqlalchemy import create_engine, Column, BigInteger, String
 from sqlalchemy.orm import sessionmaker
 
 
