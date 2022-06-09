@@ -26,7 +26,7 @@ def login(cpf, senha):
         if login and passwd == senha:
             session.commit()
             session.close()   
-            return true
+            return True
         else:
             session.commit()
             session.close() 
