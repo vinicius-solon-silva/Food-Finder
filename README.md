@@ -37,7 +37,7 @@ O programa retorna o nome do restaurante, endereço e foto do local.
 
 > Este que vos escreve, agradece imensamente pela parceria, camaradagem, amizade e cooperação durante todo o projeto. Foi gratificante poder ter a experiência de desenvolvê-lo com estes aqui citados.
 
-
+# ------------------------------------------------------------------------------
 
 # Food Finder
 Searches for restaurants closest to the user, based on the type of food he wants to eat.
