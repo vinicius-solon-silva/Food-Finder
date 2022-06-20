@@ -29,10 +29,49 @@ O programa retorna o nome do restaurante, endereço e foto do local.
 - Opção de utilizar o app sem login.
 
 # Sobre 
->Este projeto foi desenvolvido pelos seguintes alunos do 5º semestre do curso de Análise e Desenvolvimento de Sistemas da Faculdade de Tecnologia de Campinas (FATEC Campinas), durante a matéria de Laboratório de Engenharia de Software lecionada pelo professor Anderson Luiz Barbosa.:
+>Este projeto foi desenvolvido pelos seguintes alunos do 5º semestre do curso de Análise e Desenvolvimento de Sistemas da Faculdade de Tecnologia de Campinas (FATEC Campinas), durante a matéria de Laboratório de Engenharia de Software lecionada pelo professor Anderson Luiz Barbosa:
 >- Vinicius Solon Silva
 >- Matheus Bosco Martins da Silva
 >- Bhrenner Wilson Marcelino 
 >- Diego Marques de Araujo Evangelista
 
 > Este que vos escreve, agradece imensamente pela parceria, camaradagem, amizade e cooperação durante todo o projeto. Foi gratificante poder ter a experiência de desenvolvê-lo com estes aqui citados.
+
+
+
+# Food Finder
+Searches for restaurants closest to the user, based on the type of food he wants to eat.
+
+# Prerequisites
+- Python installed (v3.9+).
+- VsCode installed.
+- Pip installed.
+
+## Pip packages to be installed
+```
+pip install kivymd
+pip install requests
+pip install sqlalchemy
+pip install pymssql
+pip install urllib3
+```
+
+# How to use
+The user needs to enter the type of food he wants to eat and the place where it is located, it can be the name of the street, avenue, neighborhood or even the specific name of the place.
+
+The program returns the name of the restaurant, address and photo of the place.
+
+# Improvements to be implemented
+- Favorites screen.
+- Add restaurant to favorites.
+- User features (login, delete account, edit account attributes, change password/email/photo, etc.)
+- Option to use the app without login.
+
+# About
+>This project was developed by the following students from the 5th semester of the Systems Analysis and Development course at the Faculty of Technology of Campinas (FATEC Campinas), during the Software Engineering Laboratory course taught by Professor Anderson Luiz Barbosa:
+>- Vinicius Solon Silva
+>- Matheus Bosco Martins da Silva
+>- Bhrenner Wilson Marcelino
+>- Diego Marques de Araujo Evangelista
+
+> The one who writes to you, thanks you immensely for the partnership, camaraderie, friendship and cooperation throughout the project. It was gratifying to be able to have the experience of developing it with those mentioned here.
