@@ -18,9 +18,14 @@ pip install urllib3
 ```
 
 # Como usar
-O usuário precisa inserir o tipo de comida que deseja comer e o local aonde se encontra, pode ser nome da rua, avenida, bairro ou até mesmo o nome específico do local.
 
-O programa retorna o nome do restaurante, endereço e foto do local.
+Ao clonar o repositório, ou baixá-lo via ZIP, instale todos os pacotes pip.
+
+Abra o VsCode e execute o arquivo *main.py*, após isto, uma janela irá aparecer. Atualmente, o usuário só poderá realizar cadastro e login.
+
+Ao entrar na home do app, o usuário precisa inserir o tipo de comida que deseja comer e o local aonde se encontra, pode ser nome da rua, avenida, bairro ou até mesmo o nome específico do local.Recomenda-se colocar sempre o nome da cidade com a unidade federal, para melhor filtragem.
+
+O programa retorna uma lista contendo os nomes dos restaurantes, endereços e fotos do locais.
 
 # Melhorias a serem implementadas
 - Tela de favoritos.
@@ -58,9 +63,13 @@ pip install urllib3
 ```
 
 # How to use
-The user needs to enter the type of food he wants to eat and the place where it is located, it can be the name of the street, avenue, neighborhood or even the specific name of the place.
+When cloning the repository, or downloading it via ZIP, install all pip packages.
 
-The program returns the name of the restaurant, address and photo of the place.
+Open VsCode and run the *main.py* file, after that, a window will appear. Currently, the user can only register and login.
+
+When entering the app's homepage, the user needs to enter the type of food they want to eat and the place where it is located, it can be the name of the street, avenue, neighborhood or even the specific name of the place. of the city with the federal unit, for better filtering.
+
+The program returns a list containing the names of restaurants, addresses and photos of the places.
 
 # Improvements to be implemented
 - Favorites screen.
