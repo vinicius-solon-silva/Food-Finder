@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, Column, BigInteger, String
 from sqlalchemy.orm import sessionmaker
 
 
-engine = create_engine(f'mssql+pymssql://adminvinicius:vinnyadmin123!@viniciussilva-sv.database.windows.net:1433/viniciussilva-db', echo=False)
+engine = create_engine(CONNECTION_STRING, echo=False)
 Base = declarative_base()
 class User(Base):
     __tablename__ = 'FoodFinderUser'
