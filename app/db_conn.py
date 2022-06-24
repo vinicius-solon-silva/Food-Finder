@@ -7,7 +7,7 @@ def cadastrar(nome, cpf, data_nasc, email, senha):
 
     cpf = int(cpf)
 
-    engine = create_engine(f'mssql+pymssql://adminvinicius:vinnyadmin123!@viniciussilva-sv.database.windows.net:1433/viniciussilva-db', echo=False)
+    engine = create_engine(CONNECTION_STRING, echo=False)
     Sessions = sessionmaker(bind=engine)
     session = Sessions()
     Base = declarative_base()
