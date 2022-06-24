@@ -10,7 +10,7 @@ def find(meal_type,location):
 
 	headers = {
 		"Accept": "application/json",
-		"Authorization": "fsq3JWESDZttTqNG9BzfhQiUFOaQRee0g1SeJjTUychdAV4="
+		"Authorization": FRSQR_AUTH
 	}
 
 	response = requests.get(url, headers=headers)
