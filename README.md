@@ -65,9 +65,9 @@ pip install urllib3
 # How to use
 When cloning the repository, or downloading it via ZIP, install all pip packages.
 
-Open VsCode and run the *main.py* file, after that, a window will appear. Currently, the user can only register and login.
+Open VsCode and run the main.py file, after that, a window will appear. Currently, the user can only register and login.
 
-When entering the app's homepage, the user needs to enter the type of food they want to eat and the place where it is located, it can be the name of the street, avenue, neighborhood or even the specific name of the place. of the city with the federal unit, for better filtering.
+When entering the app's homepage, the user needs to enter the type of food they want to eat and the place where it is located, it can be the name of the street, avenue, neighborhood or even the specific name of the place. It is recommended to always put the name of the city with the federal unit, for better filtering.
 
 The program returns a list containing the names of restaurants, addresses and photos of the places.
 
