@@ -1,13 +1,14 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, Column, BigInteger, String, Date
 from sqlalchemy.orm import sessionmaker
+from AUTH import CONN_STR
 
 
 def cadastrar(nome, cpf, data_nasc, email, senha):
 
     cpf = int(cpf)
 
-    engine = create_engine(CONNECTION_STRING, echo=False)
+    engine = create_engine(CONN_STR, echo=False)
     Sessions = sessionmaker(bind=engine)
     session = Sessions()
     Base = declarative_base()

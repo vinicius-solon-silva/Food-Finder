@@ -1,9 +1,10 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, Column, BigInteger, String
 from sqlalchemy.orm import sessionmaker
+from AUTH import CONN_STR
 
 
-engine = create_engine(CONNECTION_STRING, echo=False)
+engine = create_engine(CONN_STR, echo=False)
 Base = declarative_base()
 class User(Base):
     __tablename__ = 'FoodFinderUser'

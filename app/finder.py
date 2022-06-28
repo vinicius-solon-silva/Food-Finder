@@ -1,5 +1,6 @@
 import requests
 import urllib.parse
+from AUTH import FRSQR_KEY
 
 def find(meal_type,location):
 	
@@ -10,7 +11,7 @@ def find(meal_type,location):
 
 	headers = {
 		"Accept": "application/json",
-		"Authorization": FRSQR_AUTH
+		"Authorization": FRSQR_KEY
 	}
 
 	response = requests.get(url, headers=headers)
