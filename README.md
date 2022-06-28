@@ -34,18 +34,18 @@ O programa retorna uma lista contendo os nomes dos restaurantes, endereços e fo
 - Opção de utilizar o app sem login.
 
 # Sobre 
->Este projeto foi desenvolvido pelos seguintes alunos do 5º semestre do curso de Análise e Desenvolvimento de Sistemas da Faculdade de Tecnologia de Campinas (FATEC Campinas), durante a matéria de Laboratório de Engenharia de Software lecionada pelo professor Anderson Luiz Barbosa:
+Este projeto foi desenvolvido pelos seguintes alunos do 5º semestre do curso de Análise e Desenvolvimento de Sistemas da Faculdade de Tecnologia de Campinas (FATEC Campinas), durante a matéria de Laboratório de Engenharia de Software lecionada pelo professor Anderson Luiz Barbosa:
+
 >- Vinicius Solon Silva
 >- Matheus Bosco Martins da Silva
 >- Bhrenner Wilson Marcelino 
 >- Diego Marques de Araujo Evangelista
 
-> Este que vos escreve, agradece imensamente pela parceria, camaradagem, amizade e cooperação durante todo o projeto. Foi gratificante poder ter a experiência de desenvolvê-lo com estes aqui citados.
+Este que vos escreve, agradece imensamente pela parceria, camaradagem, amizade e cooperação durante todo o projeto. Foi gratificante poder ter a experiência de desenvolvê-lo com estes aqui citados.
 
-# --------------------------------------------------
-# English description:
+<hr>
 
-# Food Finder
+# English description: Food Finder
 Searches for restaurants closest to the user, based on the type of food he wants to eat.
 
 # Prerequisites
@@ -78,10 +78,11 @@ The program returns a list containing the names of restaurants, addresses and ph
 - Option to use the app without login.
 
 # About
->This project was developed by the following students from the 5th semester of the Systems Analysis and Development course at the Faculty of Technology of Campinas (FATEC Campinas), during the Software Engineering Laboratory course taught by Professor Anderson Luiz Barbosa:
+This project was developed by the following students from the 5th semester of the Systems Analysis and Development course at the Faculty of Technology of Campinas (FATEC Campinas), during the Software Engineering Laboratory course taught by Professor Anderson Luiz Barbosa:
+
 >- Vinicius Solon Silva
 >- Matheus Bosco Martins da Silva
 >- Bhrenner Wilson Marcelino
 >- Diego Marques de Araujo Evangelista
 
-> The one who writes to you, thanks you immensely for the partnership, camaraderie, friendship and cooperation throughout the project. It was gratifying to be able to have the experience of developing it with those mentioned here.
+The one who writes to you, thanks you immensely for the partnership, camaraderie, friendship and cooperation throughout the project. It was gratifying to be able to have the experience of developing it with those mentioned here.
