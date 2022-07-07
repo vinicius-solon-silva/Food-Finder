@@ -27,7 +27,7 @@ Ao entrar na home do app, o usuário precisa inserir o tipo de comida que deseja
 
 O programa retorna uma lista contendo os nomes dos restaurantes, endereços e fotos do locais.
 
-<img src="https://raw.githubusercontent.com/vinicius-solon-silva/Food-Finder/main/img/FoodFinder.png" alt="drawing" width="500"/>
+<img src="https://raw.githubusercontent.com/vinicius-solon-silva/Food-Finder/main/img/environment.png" alt="drawing" width="800"/>
 
 
 # Melhorias a serem implementadas
