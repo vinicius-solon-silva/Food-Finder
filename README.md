@@ -1,6 +1,8 @@
+<div align="middle">
 <img src="https://raw.githubusercontent.com/vinicius-solon-silva/Food-Finder/main/img/FoodFinder.png" alt="drawing" width="500"/>
+</div>
 
-# Food-Finder
+# Food Finder
 Busca restaurantes mais próximos do usuário, baseado no tipo de comida que este deseja comer.
 
 # Pré-Requisitos
