@@ -25,7 +25,7 @@ Ao clonar o repositório, ou baixá-lo via ZIP, instale todos os pacotes pip.
 
 Abra o VsCode e execute o arquivo *main.py*, após isto, uma janela irá aparecer. Atualmente, o usuário só poderá realizar cadastro e login.
 
-Ao entrar na home do app, o usuário precisa inserir o tipo de comida que deseja comer e o local aonde se encontra, pode ser nome da rua, avenida, bairro ou até mesmo o nome específico do local.Recomenda-se colocar sempre o nome da cidade com a unidade federal, para melhor filtragem.
+Ao entrar na home do app, o usuário precisa inserir o tipo de comida que deseja comer e o local aonde se encontra, pode ser nome da rua, avenida, bairro ou até mesmo o nome específico do local. Recomenda-se colocar sempre o nome da cidade com a unidade federal, para melhor filtragem.
 
 O programa retorna uma lista contendo os nomes dos restaurantes, endereços e fotos do locais.
 
